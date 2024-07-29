@@ -1,0 +1,370 @@
+{
+    "sourceFile": "relief_crypt_common.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 88,
+            "patches": [
+                {
+                    "date": 1717073372216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1717073377695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import pandas as pd\n import numpy as np\n import torch\n \n-import crt\n+import crypten\n \n+\n def load_data(data_path):\n     df = pd.read_csv(\"data_path\")\n     numpy_array = df.values\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n"
+                },
+                {
+                    "date": 1717073386401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n import pandas as pd\n import numpy as np\n import torch\n \n-import crypten\n \n-\n def load_data(data_path):\n     df = pd.read_csv(\"data_path\")\n     numpy_array = df.values\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n"
+                },
+                {
+                    "date": 1717073669943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import torch\n \n \n def load_data(data_path):\n-    df = pd.read_csv(\"data_path\")\n+    df = pd.read_csv(data_path\")\n     numpy_array = df.values\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n     \n     return data_torch\n"
+                },
+                {
+                    "date": 1717073679339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,13 @@\n import torch\n \n \n def load_data(data_path):\n-    df = pd.read_csv(data_path\")\n+    df = pd.read_csv(data_path)\n     numpy_array = df.values\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n     \n     return data_torch\n \n \n\\ No newline at end of file\n-x = load_data(\"dataset/wine.csv\")\n+x = load_data(\"dataset/wine.csv\")\n+print(x)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1717073741305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,9 @@\n     \n     return data_torch\n \n \n+\n+\n+\n x = load_data(\"dataset/wine.csv\")\n print(x)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1717073772952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import pandas as pd\n import numpy as np\n import torch\n \n+import crypten\n \n def load_data(data_path):\n     df = pd.read_csv(data_path)\n     numpy_array = df.values\n"
+                },
+                {
+                    "date": 1717073832347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,6 @@\n     return data_torch\n \n \n \n-\n-\n x = load_data(\"dataset/wine.csv\")\n print(x)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1717073837501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,6 @@\n \n \n \n x = load_data(\"dataset/wine.csv\")\n-print(x)\n\\ No newline at end of file\n+print(x)\n+\n"
+                },
+                {
+                    "date": 1717074015251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,11 @@\n     \n     return data_torch\n \n \n+def \n \n+\n+\n x = load_data(\"dataset/wine.csv\")\n print(x)\n \n"
+                },
+                {
+                    "date": 1717074020397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     \n     return data_torch\n \n \n-def \n+def relief_crypten\n \n \n \n x = load_data(\"dataset/wine.csv\")\n"
+                },
+                {
+                    "date": 1717074066022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n     \n     return data_torch\n \n \n-def relief_crypten\n+# def relief_crypten():\n+    \n \n \n \n x = load_data(\"dataset/wine.csv\")\n"
+                },
+                {
+                    "date": 1717074541873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,7 @@\n     \n \n \n \n-x = load_data(\"dataset/wine.csv\")\n+x = load_data(\"dataset/musk.csv\")\n print(x)\n \n"
+                },
+                {
+                    "date": 1717074576634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     \n     return data_torch\n \n \n-# def relief_crypten():\n+def relief_crypten():\n     \n \n \n \n"
+                },
+                {
+                    "date": 1717074721559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def relief_crypten():\n-    \n+    random_\n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074728184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def relief_crypten():\n-    random_\n+    random_sample = \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074734188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     \n     return data_torch\n \n \n-def relief_crypten():\n+def relief_crypten(x):\n     random_sample = \n \n \n \n"
+                },
+                {
+                    "date": 1717074741119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def relief_crypten(x):\n-    random_sample = \n+    random_sample = x. sample\n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074747846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def relief_crypten(x):\n-    random_sample = x. sample\n+    random_sample = x. sample(n=1).iloc\n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074753567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,11 @@\n     return data_torch\n \n \n def relief_crypten(x):\n-    random_sample = x. sample(n=1).iloc\n+    random_sample = x. sample(n=1).iloc[0]\n+    \n+    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074759411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n     \n-    \n+    features = \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074766087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n     \n-    features = \n+    features = random_sample[:-1]\n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074774699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n     \n-    features = random_sample[:-1]\n+    features = random_sample[:-1].values\n+    label  = \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074780839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n     \n     features = random_sample[:-1].values\n-    label  = \n+    label  = random_sample[-1]\n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717074789631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n     random_sample = x. sample(n=1).iloc[0]\n     \n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n+    \n+    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717125576065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,15 +11,16 @@\n     \n     return data_torch\n \n \n+def secret\n+\n+\n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n     \n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n-    \n-    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717125581145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     \n     return data_torch\n \n \n-def secret\n+def secret_share(x)\n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125586718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n     \n     return data_torch\n \n \n-def secret_share(x)\n+def secret_share(dataset):\n+    \n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125599095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    \n+    x_share \n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125606247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    x_share \n+    features = \n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125621870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    features = \n+    features = random_sample[:-1].values\n+    \n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125628452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,30 @@\n+import pandas as pd\n+import numpy as np\n+import torch\n+\n+import crypten\n+\n+def load_data(data_path):\n+    df = pd.read_csv(data_path)\n+    numpy_array = df.values\n+    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n+    \n+    return data_torch\n+\n+\n+def secret_share(dataset):\n+    features = da[:-1].values\n+    label  = random_sample[-1]\n+\n+\n+def relief_crypten(x):\n+    random_sample = x. sample(n=1).iloc[0]\n+    \n+    features = random_sample[:-1].values\n+    label  = random_sample[-1]\n+\n+\n+\n+x = load_data(\"dataset/musk.csv\")\n+print(x)\n+\n"
+                },
+                {
+                    "date": 1717125634245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    features = da[:-1].values\n+    features = dayaset[:-1].values\n     label  = random_sample[-1]\n \n \n def relief_crypten(x):\n@@ -27,34 +27,4 @@\n \n x = load_data(\"dataset/musk.csv\")\n print(x)\n \n-import pandas as pd\n-import numpy as np\n-import torch\n-\n-import crypten\n-\n-def load_data(data_path):\n-    df = pd.read_csv(data_path)\n-    numpy_array = df.values\n-    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n-    \n-    return data_torch\n-\n-\n-def secret_share(dataset):\n-    features = random_sample[:-1].values\n-    \n-\n-\n-def relief_crypten(x):\n-    random_sample = x. sample(n=1).iloc[0]\n-    \n-    features = random_sample[:-1].values\n-    label  = random_sample[-1]\n-\n-\n-\n-x = load_data(\"dataset/musk.csv\")\n-print(x)\n-\n"
+                },
+                {
+                    "date": 1717125639642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    features = dayaset[:-1].values\n-    label  = random_sample[-1]\n+    features = dataset[:-1].values\n+    label  = dataset[-1]\n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125650017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n \n def secret_share(dataset):\n     features = dataset[:-1].values\n     label  = dataset[-1]\n+    feature\n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125661423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    features = dataset[:-1].values\n-    label  = dataset[-1]\n-    feature\n+    x_share = \n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125681703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    x_share = \n+    x_share = c\n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125688513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+import pandas as pd\n+import numpy as np\n+import torch\n+\n+import crypten\n+\n+def load_data(data_path):\n+    df = pd.read_csv(data_path)\n+    numpy_array = df.values\n+    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n+    \n+    return data_torch\n+\n+\n+def secret_share(dataset):\n+    x_share = crypten.crypt\n+\n+\n+def relief_crypten(x):\n+    random_sample = x. sample(n=1).iloc[0]\n+    \n+    features = random_sample[:-1].values\n+    label  = random_sample[-1]\n+\n+\n+\n+x = load_data(\"dataset/musk.csv\")\n+print(x)\n+\n"
+                },
+                {
+                    "date": 1717125699528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    x_share = crypten.crypt\n+    x_share = crypten.cryptensor(dataset, ptype = )\n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n@@ -26,33 +26,4 @@\n \n x = load_data(\"dataset/musk.csv\")\n print(x)\n \n-import pandas as pd\n-import numpy as np\n-import torch\n-\n-import crypten\n-\n-def load_data(data_path):\n-    df = pd.read_csv(data_path)\n-    numpy_array = df.values\n-    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n-    \n-    return data_torch\n-\n-\n-def secret_share(dataset):\n-    x_share = c\n-\n-\n-def relief_crypten(x):\n-    random_sample = x. sample(n=1).iloc[0]\n-    \n-    features = random_sample[:-1].values\n-    label  = random_sample[-1]\n-\n-\n-\n-x = load_data(\"dataset/musk.csv\")\n-print(x)\n-\n"
+                },
+                {
+                    "date": 1717125705334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    x_share = crypten.cryptensor(dataset, ptype = )\n+    x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.)\n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125711102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return data_torch\n \n \n def secret_share(dataset):\n-    x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.)\n+    x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmeyic)\n \n \n def relief_crypten(x):\n     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125718212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n     \n     return data_torch\n \n-\n+@mpc.run_multiprocess(world_size=2)\n def secret_share(dataset):\n     x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmeyic)\n \n \n"
+                },
+                {
+                    "date": 1717125728161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n import numpy as np\n import torch\n \n import crypten\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n \n def load_data(data_path):\n     df = pd.read_csv(data_path)\n     numpy_array = df.values\n@@ -15,13 +17,13 @@\n def secret_share(dataset):\n     x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmeyic)\n \n \n-def relief_crypten(x):\n-    random_sample = x. sample(n=1).iloc[0]\n+# def relief_crypten(x):\n+#     random_sample = x. sample(n=1).iloc[0]\n     \n-    features = random_sample[:-1].values\n-    label  = random_sample[-1]\n+#     features = random_sample[:-1].values\n+#     label  = random_sample[-1]\n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717125734019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n import crypten\n import crypten.mpc as mpc\n import crypten.communicator as comm \n \n+crypten.init()\n+\n def load_data(data_path):\n     df = pd.read_csv(data_path)\n     numpy_array = df.values\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n"
+                },
+                {
+                    "date": 1717125759692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n \n @mpc.run_multiprocess(world_size=2)\n def secret_share(dataset):\n     x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmeyic)\n+    rank = comm.get().get_rank()\n+    crypten.print(f\"\\nRank {rank}:\\n {x_enc}\\n\", in_order=True)\n \n \n # def relief_crypten(x):\n #     random_sample = x. sample(n=1).iloc[0]\n"
+                },
+                {
+                    "date": 1717125771166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,11 @@\n \n @mpc.run_multiprocess(world_size=2)\n def secret_share(dataset):\n     x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmeyic)\n+    \n     rank = comm.get().get_rank()\n-    crypten.print(f\"\\nRank {rank}:\\n {x_enc}\\n\", in_order=True)\n+    crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n \n \n # def relief_crypten(x):\n #     random_sample = x. sample(n=1).iloc[0]\n@@ -30,6 +31,7 @@\n \n \n \n x = load_data(\"dataset/musk.csv\")\n-print(x)\n+# print(x)\n \n+\n"
+                },
+                {
+                    "date": 1717125787116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     return data_torch\n \n @mpc.run_multiprocess(world_size=2)\n def secret_share(dataset):\n-    x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmeyic)\n+    x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmetic)\n     \n     rank = comm.get().get_rank()\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n \n@@ -32,6 +32,6 @@\n \n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n+secret_share(x)\n \n-\n"
+                },
+                {
+                    "date": 1717125818795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     \n     rank = comm.get().get_rank()\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n \n-\n+def \n # def relief_crypten(x):\n #     random_sample = x. sample(n=1).iloc[0]\n     \n #     features = random_sample[:-1].values\n"
+                },
+                {
+                    "date": 1717125839104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n     \n     rank = comm.get().get_rank()\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n \n-def \n # def relief_crypten(x):\n #     random_sample = x. sample(n=1).iloc[0]\n     \n #     features = random_sample[:-1].values\n"
+                },
+                {
+                    "date": 1717126031828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,13 @@\n     \n     rank = comm.get().get_rank()\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n \n-# def relief_crypten(x):\n-#     random_sample = x. sample(n=1).iloc[0]\n+def relief_crypten(x):\n+    random_sample = x.sample(n=1).iloc[0]\n     \n-#     features = random_sample[:-1].values\n-#     label  = random_sample[-1]\n+    features = random_sample[:-1].values\n+    label  = random_sample[-1]\n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717126090715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n \n def relief_crypten(x):\n     random_sample = x.sample(n=1).iloc[0]\n-    \n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n \n \n"
+                },
+                {
+                    "date": 1717126107119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,14 @@\n def relief_crypten(x):\n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n+    \n+    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n secret_share(x)\n+relief_crypten()\n \n"
+                },
+                {
+                    "date": 1717126113269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n     x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmetic)\n     \n     rank = comm.get().get_rank()\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n+    return\n \n def relief_crypten(x):\n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n"
+                },
+                {
+                    "date": 1717126118529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n     x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmetic)\n     \n     rank = comm.get().get_rank()\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n-    return\n+    \n+    return x_share\n \n def relief_crypten(x):\n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n"
+                },
+                {
+                    "date": 1717126124187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n \n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n-secret_share(x)\n+x_share = secret_share(x)\n relief_crypten()\n \n"
+                },
+                {
+                    "date": 1717126131726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,12 +29,14 @@\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n     \n     \n+    \n+    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-relief_crypten()\n+relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717126145317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,8 @@\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n     \n     \n-    \n-    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717126235077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,6 +35,7 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n+\n relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717126242757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,7 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-\n+print(x_share.)\n relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717837423785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,7 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-print(x_share.)\n-relief_crypten(x_share)\n+print(x_share.typ)\n+# relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717837477632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,7 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-print(x_share.typ)\n+print(x_share.type)\n # relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717837487540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,6 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-print(x_share.type)\n # relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717838461606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n     \n     \n+    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717838467631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,11 +27,11 @@\n def relief_crypten(x):\n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n+    crypten.print（\n     \n     \n-    \n \n \n \n x = load_data(\"dataset/musk.csv\")\n"
+                },
+                {
+                    "date": 1717838476624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n def relief_crypten(x):\n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n-    crypten.print（\n+    crypten.print(\"\")\n     \n     \n \n \n"
+                },
+                {
+                    "date": 1717838484319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n def relief_crypten(x):\n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n-    crypten.print(\"\")\n+    crypten.print(\"label\", label)\n     \n     \n \n \n"
+                },
+                {
+                    "date": 1717838504010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n     \n     return x_share\n \n def relief_crypten(x):\n+    \n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n     crypten.print(\"label\", label)\n@@ -36,6 +37,6 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-# relief_crypten(x_share)\n+relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717838657834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,6 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-relief_crypten(x_share)\n+# relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717838664246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,7 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n+print(type())\n # relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717838751375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n import crypten\n import crypten.mpc as mpc\n import crypten.communicator as comm \n+from crypten.mpc import MPCTensor\n \n crypten.init()\n \n def load_data(data_path):\n@@ -37,7 +38,7 @@\n \n x = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n-print(type())\n+print(type(x_share))\n # relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1717838762531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+import pandas as pd\n+import numpy as np\n+import torch\n+\n+import crypten\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n+from crypten.mpc import MPCTensor\n+\n+crypten.init()\n+\n+def load_data(data_path):\n+    df = pd.read_csv(data_path)\n+    numpy_array = df.values\n+    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n+    \n+    return data_torch\n+\n+@mpc.run_multiprocess(world_size=2)\n+def secret_share(dataset):\n+    x_share = MPC(dataset, ptype = crypten.mpc.arithmetic)\n+    \n+    rank = comm.get().get_rank()\n+    crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n+    \n+    return x_share\n+\n+def relief_crypten(x):\n+    \n+    random_sample = x.sample(n=1).iloc[0]\n+    features = random_sample[:-1].values\n+    label  = random_sample[-1]\n+    crypten.print(\"label\", label)\n+    \n+    \n+\n+\n+\n+x = load_data(\"dataset/musk.csv\")\n+# print(x)\n+x_share = secret_share(x)\n+print(type(x_share))\n+# relief_crypten(x_share)\n+\n"
+                },
+                {
+                    "date": 1717838769262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     return data_torch\n \n @mpc.run_multiprocess(world_size=2)\n def secret_share(dataset):\n-    x_share = MPC(dataset, ptype = crypten.mpc.arithmetic)\n+    x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n     \n     rank = comm.get().get_rank()\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n     \n@@ -41,48 +41,4 @@\n x_share = secret_share(x)\n print(type(x_share))\n # relief_crypten(x_share)\n \n-import pandas as pd\n-import numpy as np\n-import torch\n-\n-import crypten\n-import crypten.mpc as mpc\n-import crypten.communicator as comm \n-from crypten.mpc import MPCTensor\n-\n-crypten.init()\n-\n-def load_data(data_path):\n-    df = pd.read_csv(data_path)\n-    numpy_array = df.values\n-    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n-    \n-    return data_torch\n-\n-@mpc.run_multiprocess(world_size=2)\n-def secret_share(dataset):\n-    x_share = crypten.cryptensor(dataset, ptype = crypten.mpc.arithmetic)\n-    \n-    rank = comm.get().get_rank()\n-    crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n-    \n-    return x_share\n-\n-def relief_crypten(x):\n-    \n-    random_sample = x.sample(n=1).iloc[0]\n-    features = random_sample[:-1].values\n-    label  = random_sample[-1]\n-    crypten.print(\"label\", label)\n-    \n-    \n-\n-\n-\n-x = load_data(\"dataset/musk.csv\")\n-# print(x)\n-x_share = secret_share(x)\n-print(type(x_share))\n-# relief_crypten(x_share)\n-\n"
+                },
+                {
+                    "date": 1719820720286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,11 @@\n     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n     \n     return x_share\n \n+\n+\n+\n def relief_crypten(x):\n     \n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n"
+                },
+                {
+                    "date": 1719820739766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,48 @@\n from crypten.mpc import MPCTensor\n \n crypten.init()\n \n+\n+\n+def load_dataset(dataset):\n+    dataset_path = os.path.join(DATASET_DIR, dataset)\n+\n+    # 尝试打开并读取CSV文件\n+    try:\n+        with open(dataset_path, 'r', encoding='utf-8') as csvfile:\n+            spamreader = csv.reader(csvfile)\n+            data = np.array(list(spamreader))\n+    except FileNotFoundError:\n+        print(f\"Error: The file {dataset_path} was not found.\")\n+        return None, None\n+    except Exception as e:\n+        print(f\"Error: An error occurred while reading the file: {e}\")\n+        return None, None\n+\n+    # 检查数据是否为空\n+    if data.size == 0:\n+        print(\"Error: The dataset is empty.\")\n+        return None, None\n+\n+    feature = data[:, :-1].astype(np.float64)\n+    labels = data[:, -1]\n+\n+    # 创建标签映射\n+    unique_labels = np.unique(labels)\n+    label_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n+    int_labels = np.array([label_to_int[label] for label in labels], dtype=np.uint8)\n+    labell = int_labels.reshape(-1,1)\n+    \n+    # 将标签转换为独热矩阵\n+    one_hot_labels = np.zeros((int_labels.size, int_labels.max() + 1), dtype=np.uint8)\n+    one_hot_labels[np.arange(int_labels.size), int_labels] = 1\n+\n+    print(\"======feature_size=====\", feature.shape)\n+    print(\"======label_size=====\", labell.shape)\n+    return feature, one_hot_labels\n+\n+\n def load_data(data_path):\n     df = pd.read_csv(data_path)\n     numpy_array = df.values\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n@@ -28,9 +68,8 @@\n \n \n \n def relief_crypten(x):\n-    \n     random_sample = x.sample(n=1).iloc[0]\n     features = random_sample[:-1].values\n     label  = random_sample[-1]\n     crypten.print(\"label\", label)\n"
+                },
+                {
+                    "date": 1719820751735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import pandas as pd\n import numpy as np\n import torch\n-\n+import os\n import crypten\n import crypten.mpc as mpc\n import crypten.communicator as comm \n from crypten.mpc import MPCTensor\n"
+                },
+                {
+                    "date": 1719820762782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,18 @@\n \n crypten.init()\n \n \n+DATASET_DIR = os.path.join(os.path.dirname(__file__), '../dataset')\n \n+class DataSetParam:\n+    def __init__(self, dataset_name):\n+        self.dataset_name = dataset_name\n+\n+\n+class DataSet:\n+    sonar = DataSetParam('sonar.csv')\n+\n def load_dataset(dataset):\n     dataset_path = os.path.join(DATASET_DIR, dataset)\n \n     # 尝试打开并读取CSV文件\n"
+                },
+                {
+                    "date": 1719820770670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n crypten.init()\n \n \n-DATASET_DIR = os.path.join(os.path.dirname(__file__), '../dataset')\n+DATASET_DIR = os.path.join(os.path.dirname(__file__), 'dataset')\n \n class DataSetParam:\n     def __init__(self, dataset_name):\n         self.dataset_name = dataset_name\n"
+                },
+                {
+                    "date": 1719820776631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,12 @@\n class DataSetParam:\n     def __init__(self, dataset_name):\n         self.dataset_name = dataset_name\n \n-\n class DataSet:\n     sonar = DataSetParam('sonar.csv')\n+    \n+    \n \n def load_dataset(dataset):\n     dataset_path = os.path.join(DATASET_DIR, dataset)\n \n"
+                },
+                {
+                    "date": 1719820784367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,97 @@\n+import pandas as pd\n+import numpy as np\n+import torch\n+import os\n+import csv\n+import crypten\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n+from crypten.mpc import MPCTensor\n+\n+crypten.init()\n+\n+\n+DATASET_DIR = os.path.join(os.path.dirname(__file__), 'dataset')\n+\n+class DataSetParam:\n+    def __init__(self, dataset_name):\n+        self.dataset_name = dataset_name\n+\n+class DataSet:\n+    sonar = DataSetParam('sonar.csv')\n+    \n+    \n+\n+def load_dataset(dataset):\n+    dataset_path = os.path.join(DATASET_DIR, dataset)\n+\n+    # 尝试打开并读取CSV文件\n+    try:\n+        with open(dataset_path, 'r', encoding='utf-8') as csvfile:\n+            spamreader = csv.reader(csvfile)\n+            data = np.array(list(spamreader))\n+    except FileNotFoundError:\n+        print(f\"Error: The file {dataset_path} was not found.\")\n+        return None, None\n+    except Exception as e:\n+        print(f\"Error: An error occurred while reading the file: {e}\")\n+        return None, None\n+\n+    # 检查数据是否为空\n+    if data.size == 0:\n+        print(\"Error: The dataset is empty.\")\n+        return None, None\n+\n+    feature = data[:, :-1].astype(np.float64)\n+    labels = data[:, -1]\n+\n+    # 创建标签映射\n+    unique_labels = np.unique(labels)\n+    label_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n+    int_labels = np.array([label_to_int[label] for label in labels], dtype=np.uint8)\n+    labell = int_labels.reshape(-1,1)\n+    \n+    # 将标签转换为独热矩阵\n+    one_hot_labels = np.zeros((int_labels.size, int_labels.max() + 1), dtype=np.uint8)\n+    one_hot_labels[np.arange(int_labels.size), int_labels] = 1\n+\n+    print(\"======feature_size=====\", feature.shape)\n+    print(\"======label_size=====\", labell.shape)\n+    return feature, one_hot_labels\n+\n+\n+def load_data(data_path):\n+    df = pd.read_csv(data_path)\n+    numpy_array = df.values\n+    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n+    \n+    return data_torch\n+\n+@mpc.run_multiprocess(world_size=2)\n+def secret_share(dataset):\n+    x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n+    \n+    rank = comm.get().get_rank()\n+    crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n+    \n+    return x_share\n+\n+\n+\n+\n+def relief_crypten(x):\n+    random_sample = x.sample(n=1).iloc[0]\n+    features = random_sample[:-1].values\n+    label  = random_sample[-1]\n+    crypten.print(\"label\", label)\n+    \n+    \n+\n+\n+\n+x = load_data(\"dataset/musk.csv\")\n+# print(x)\n+x_share = secret_share(x)\n+print(type(x_share))\n+# relief_crypten(x_share)\n+\n"
+                },
+                {
+                    "date": 1719820797077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n \n def load_dataset(dataset):\n     dataset_path = os.path.join(DATASET_DIR, dataset)\n \n-    # 尝试打开并读取CSV文件\n     try:\n         with open(dataset_path, 'r', encoding='utf-8') as csvfile:\n             spamreader = csv.reader(csvfile)\n             data = np.array(list(spamreader))\n@@ -36,9 +35,8 @@\n     except Exception as e:\n         print(f\"Error: An error occurred while reading the file: {e}\")\n         return None, None\n \n-    # 检查数据是否为空\n     if data.size == 0:\n         print(\"Error: The dataset is empty.\")\n         return None, None\n \n@@ -94,100 +92,4 @@\n x_share = secret_share(x)\n print(type(x_share))\n # relief_crypten(x_share)\n \n-import pandas as pd\n-import numpy as np\n-import torch\n-import os\n-import crypten\n-import crypten.mpc as mpc\n-import crypten.communicator as comm \n-from crypten.mpc import MPCTensor\n-\n-crypten.init()\n-\n-\n-DATASET_DIR = os.path.join(os.path.dirname(__file__), 'dataset')\n-\n-class DataSetParam:\n-    def __init__(self, dataset_name):\n-        self.dataset_name = dataset_name\n-\n-class DataSet:\n-    sonar = DataSetParam('sonar.csv')\n-    \n-    \n-\n-def load_dataset(dataset):\n-    dataset_path = os.path.join(DATASET_DIR, dataset)\n-\n-    # 尝试打开并读取CSV文件\n-    try:\n-        with open(dataset_path, 'r', encoding='utf-8') as csvfile:\n-            spamreader = csv.reader(csvfile)\n-            data = np.array(list(spamreader))\n-    except FileNotFoundError:\n-        print(f\"Error: The file {dataset_path} was not found.\")\n-        return None, None\n-    except Exception as e:\n-        print(f\"Error: An error occurred while reading the file: {e}\")\n-        return None, None\n-\n-    # 检查数据是否为空\n-    if data.size == 0:\n-        print(\"Error: The dataset is empty.\")\n-        return None, None\n-\n-    feature = data[:, :-1].astype(np.float64)\n-    labels = data[:, -1]\n-\n-    # 创建标签映射\n-    unique_labels = np.unique(labels)\n-    label_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n-    int_labels = np.array([label_to_int[label] for label in labels], dtype=np.uint8)\n-    labell = int_labels.reshape(-1,1)\n-    \n-    # 将标签转换为独热矩阵\n-    one_hot_labels = np.zeros((int_labels.size, int_labels.max() + 1), dtype=np.uint8)\n-    one_hot_labels[np.arange(int_labels.size), int_labels] = 1\n-\n-    print(\"======feature_size=====\", feature.shape)\n-    print(\"======label_size=====\", labell.shape)\n-    return feature, one_hot_labels\n-\n-\n-def load_data(data_path):\n-    df = pd.read_csv(data_path)\n-    numpy_array = df.values\n-    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n-    \n-    return data_torch\n-\n-@mpc.run_multiprocess(world_size=2)\n-def secret_share(dataset):\n-    x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n-    \n-    rank = comm.get().get_rank()\n-    crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n-    \n-    return x_share\n-\n-\n-\n-\n-def relief_crypten(x):\n-    random_sample = x.sample(n=1).iloc[0]\n-    features = random_sample[:-1].values\n-    label  = random_sample[-1]\n-    crypten.print(\"label\", label)\n-    \n-    \n-\n-\n-\n-x = load_data(\"dataset/musk.csv\")\n-# print(x)\n-x_share = secret_share(x)\n-print(type(x_share))\n-# relief_crypten(x_share)\n-\n"
+                },
+                {
+                    "date": 1719820810507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,25 +64,25 @@\n     data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n     \n     return data_torch\n \n-@mpc.run_multiprocess(world_size=2)\n-def secret_share(dataset):\n-    x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n+# @mpc.run_multiprocess(world_size=2)\n+# def secret_share(dataset):\n+#     x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n     \n-    rank = comm.get().get_rank()\n-    crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n+#     rank = comm.get().get_rank()\n+#     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n     \n-    return x_share\n+#     return x_share\n \n \n \n \n-def relief_crypten(x):\n-    random_sample = x.sample(n=1).iloc[0]\n-    features = random_sample[:-1].values\n-    label  = random_sample[-1]\n-    crypten.print(\"label\", label)\n+# def relief_crypten(x):\n+#     random_sample = x.sample(n=1).iloc[0]\n+#     features = random_sample[:-1].values\n+#     label  = random_sample[-1]\n+#     crypten.print(\"label\", label)\n     \n     \n \n \n"
+                },
+                {
+                    "date": 1719820831598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,15 +57,8 @@\n     print(\"======label_size=====\", labell.shape)\n     return feature, one_hot_labels\n \n \n-def load_data(data_path):\n-    df = pd.read_csv(data_path)\n-    numpy_array = df.values\n-    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n-    \n-    return data_torch\n-\n # @mpc.run_multiprocess(world_size=2)\n # def secret_share(dataset):\n #     x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n     \n"
+                },
+                {
+                    "date": 1719820839009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n     \n \n \n \n-x = load_data(\"dataset/musk.csv\")\n+feature, label = load_data(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n print(type(x_share))\n # relief_crypten(x_share)\n"
+                },
+                {
+                    "date": 1719820844677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n     \n \n \n \n-feature, label = load_data(\"dataset/musk.csv\")\n+feature, label = load_dataset(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n print(type(x_share))\n # relief_crypten(x_share)\n"
+                },
+                {
+                    "date": 1719820868080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,10 +77,12 @@\n #     crypten.print(\"label\", label)\n     \n     \n \n+    data_train = DataSet.sonar\n+    \n+    x, y = load_dataset(data_train.dataset_name)\n \n-\n feature, label = load_dataset(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n print(type(x_share))\n"
+                },
+                {
+                    "date": 1719820875306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,12 +77,12 @@\n #     crypten.print(\"label\", label)\n     \n     \n \n-    data_train = DataSet.sonar\n-    \n-    x, y = load_dataset(data_train.dataset_name)\n+data_train = DataSet.sonar\n \n+feature, label = load_dataset(data_train.dataset_name)\n+\n feature, label = load_dataset(\"dataset/musk.csv\")\n # print(x)\n x_share = secret_share(x)\n print(type(x_share))\n"
+                },
+                {
+                    "date": 1719820884929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,88 @@\n+import pandas as pd\n+import numpy as np\n+import torch\n+import os\n+import csv\n+import crypten\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n+from crypten.mpc import MPCTensor\n+\n+crypten.init()\n+\n+\n+DATASET_DIR = os.path.join(os.path.dirname(__file__), 'dataset')\n+\n+class DataSetParam:\n+    def __init__(self, dataset_name):\n+        self.dataset_name = dataset_name\n+\n+class DataSet:\n+    sonar = DataSetParam('sonar.csv')\n+    \n+    \n+\n+def load_dataset(dataset):\n+    dataset_path = os.path.join(DATASET_DIR, dataset)\n+\n+    try:\n+        with open(dataset_path, 'r', encoding='utf-8') as csvfile:\n+            spamreader = csv.reader(csvfile)\n+            data = np.array(list(spamreader))\n+    except FileNotFoundError:\n+        print(f\"Error: The file {dataset_path} was not found.\")\n+        return None, None\n+    except Exception as e:\n+        print(f\"Error: An error occurred while reading the file: {e}\")\n+        return None, None\n+\n+    if data.size == 0:\n+        print(\"Error: The dataset is empty.\")\n+        return None, None\n+\n+    feature = data[:, :-1].astype(np.float64)\n+    labels = data[:, -1]\n+\n+    # 创建标签映射\n+    unique_labels = np.unique(labels)\n+    label_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n+    int_labels = np.array([label_to_int[label] for label in labels], dtype=np.uint8)\n+    labell = int_labels.reshape(-1,1)\n+    \n+    # 将标签转换为独热矩阵\n+    one_hot_labels = np.zeros((int_labels.size, int_labels.max() + 1), dtype=np.uint8)\n+    one_hot_labels[np.arange(int_labels.size), int_labels] = 1\n+\n+    print(\"======feature_size=====\", feature.shape)\n+    print(\"======label_size=====\", labell.shape)\n+    return feature, one_hot_labels\n+\n+\n+# @mpc.run_multiprocess(world_size=2)\n+# def secret_share(dataset):\n+#     x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n+    \n+#     rank = comm.get().get_rank()\n+#     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n+    \n+#     return x_share\n+\n+\n+\n+\n+# def relief_crypten(x):\n+#     random_sample = x.sample(n=1).iloc[0]\n+#     features = random_sample[:-1].values\n+#     label  = random_sample[-1]\n+#     crypten.print(\"label\", label)\n+    \n+    \n+\n+data_train = DataSet.sonar\n+\n+feature, label = load_dataset(data_train.dataset_name)\n+\n+# print(x\n+print(type(x_share))\n+# relief_crypten(x_share)\n+\n"
+                },
+                {
+                    "date": 1719820891181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,7 +81,7 @@\n data_train = DataSet.sonar\n \n feature, label = load_dataset(data_train.dataset_name)\n \n-print(type(x_share))\n+print(label)\n # relief_crypten(x_share)\n \n"
+                },
+                {
+                    "date": 1719820925756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,86 @@\n+import pandas as pd\n+import numpy as np\n+import torch\n+import os\n+import csv\n+import crypten\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n+from crypten.mpc import MPCTensor\n+\n+crypten.init()\n+\n+\n+DATASET_DIR = os.path.join(os.path.dirname(__file__), 'dataset')\n+\n+class DataSetParam:\n+    def __init__(self, dataset_name):\n+        self.dataset_name = dataset_name\n+\n+class DataSet:\n+    sonar = DataSetParam('sonar.csv')\n+    \n+    \n+\n+def load_dataset(dataset):\n+    dataset_path = os.path.join(DATASET_DIR, dataset)\n+\n+    try:\n+        with open(dataset_path, 'r', encoding='utf-8') as csvfile:\n+            spamreader = csv.reader(csvfile)\n+            data = np.array(list(spamreader))\n+    except FileNotFoundError:\n+        print(f\"Error: The file {dataset_path} was not found.\")\n+        return None, None\n+    except Exception as e:\n+        print(f\"Error: An error occurred while reading the file: {e}\")\n+        return None, None\n+\n+    if data.size == 0:\n+        print(\"Error: The dataset is empty.\")\n+        return None, None\n+\n+    feature = data[:, :-1].astype(np.float64)\n+    labels = data[:, -1]\n+\n+    # 创建标签映射\n+    unique_labels = np.unique(labels)\n+    label_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n+    int_labels = np.array([label_to_int[label] for label in labels], dtype=np.uint8)\n+    labell = int_labels.reshape(-1,1)\n+    \n+    # 将标签转换为独热矩阵\n+    one_hot_labels = np.zeros((int_labels.size, int_labels.max() + 1), dtype=np.uint8)\n+    one_hot_labels[np.arange(int_labels.size), int_labels] = 1\n+\n+    print(\"======feature_size=====\", feature.shape)\n+    print(\"======label_size=====\", labell.shape)\n+    return feature, one_hot_labels\n+\n+\n+# @mpc.run_multiprocess(world_size=2)\n+# def secret_share(dataset):\n+#     x_share = MPCTensor(dataset, ptype = crypten.mpc.arithmetic)\n+    \n+#     rank = comm.get().get_rank()\n+#     crypten.print(f\"\\nRank {rank}:\\n {x_share}\\n\", in_order=True)\n+    \n+#     return x_share\n+\n+\n+\n+\n+# def relief_crypten(x):\n+#     random_sample = x.sample(n=1).iloc[0]\n+#     features = random_sample[:-1].values\n+#     label  = random_sample[-1]\n+#     crypten.print(\"label\", label)\n+    \n+    \n+\n+data_train = DataSet.sonar\n+feature, label = load_dataset(data_train.dataset_name)\n+\n+print(label)\n+\n+\n"
+                }
+            ],
+            "date": 1717073372216,
+            "name": "Commit-0",
+            "content": "import pandas as pd\nimport numpy as np\nimport torch\n\nimport crt\n\ndef load_data(data_path):\n    df = pd.read_csv(\"data_path\")\n    numpy_array = df.values\n    data_torch = torch.tensor(numpy_array, dtype = torch.float32)\n    \n    return data_torch\n\n\nx = load_data(\"dataset/wine.csv\")"
+        }
+    ]
+}

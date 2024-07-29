@@ -1,0 +1,334 @@
+{
+    "sourceFile": "relief_mpc/draft.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 79,
+            "patches": [
+                {
+                    "date": 1719802073795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719802082962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import crt\n\\ No newline at end of file\n+import crypten\n+import \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802226924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,5 @@\n import crypten\n-import \n\\ No newline at end of file\n+import torch\n+\n+\n+crypten.init()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802258521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import crypten\n import torch\n \n \n-crypten.init()\n\\ No newline at end of file\n+x\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802264477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,15 @@\n import crypten\n import torch\n \n \n-x\n\\ No newline at end of file\n+def generate_tensor_with_single_one(N):\n+    # Create a tensor of zeros with length N\n+    tensor = torch.zeros(N, dtype=torch.int32)\n+    \n+    # Randomly choose an index to be set to 1\n+    index = torch.randint(0, N, (1,))\n+    \n+    # Set the chosen index to 1\n+    tensor[index] = 1\n+    \n+    return tensor\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802271789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,9 @@\n import torch\n \n \n def generate_tensor_with_single_one(N):\n-    # Create a tensor of zeros with length N\n     tensor = torch.zeros(N, dtype=torch.int32)\n-    \n-    # Randomly choose an index to be set to 1\n     index = torch.randint(0, N, (1,))\n     \n     # Set the chosen index to 1\n     tensor[index] = 1\n"
+                },
+                {
+                    "date": 1719802280300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n def generate_tensor_with_single_one(N):\n     tensor = torch.zeros(N, dtype=torch.int32)\n     index = torch.randint(0, N, (1,))\n     \n-    # Set the chosen index to 1\n     tensor[index] = 1\n     \n-    return tensor\n\\ No newline at end of file\n+    return tensor\n+\n+\n"
+                },
+                {
+                    "date": 1719802285477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,7 @@\n     \n     return tensor\n \n \n+x = generate_tensor_with_single_one(\n+    \n+)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802295363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,6 @@\n     \n     return tensor\n \n \n-x = generate_tensor_with_single_one(\n-    \n-)\n\\ No newline at end of file\n+x = generate_tensor_with_single_one(10)\n+y = generate_tensor_with_single_\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802304154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n     tensor[index] = 1\n     \n     return tensor\n \n-\n+N = 10\n x = generate_tensor_with_single_one(10)\n\\ No newline at end of file\n-y = generate_tensor_with_single_\n+y = generate_tensor_with_single_one(10)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802310311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,6 @@\n     \n     return tensor\n \n N = 10\n-x = generate_tensor_with_single_one(10)\n-y = generate_tensor_with_single_one(10)\n\\ No newline at end of file\n+x = generate_tensor_with_single_one(N)\n+y = generate_tensor_with_single_one(N=)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802321544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,7 @@\n     return tensor\n \n N = 10\n x = generate_tensor_with_single_one(N)\n-y = generate_tensor_with_single_one(N=)\n\\ No newline at end of file\n+y = generate_tensor_with_single_one(N)\n+\n+x\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802328044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n N = 10\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n-x\n\\ No newline at end of file\n+x_enc = crypten.cr\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802335672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n N = 10\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n-x_enc = crypten.cr\n\\ No newline at end of file\n+x_enc = crypten.cryptensor(x, ptype = )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802348147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n N = 10\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n-x_enc = crypten.cryptensor(x, ptype = )\n\\ No newline at end of file\n+x_enc = crypten.cryptensor(x, ptype = crypten.mpc.)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802384901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,23 @@\n import crypten\n import torch\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n \n+@mpc.run_multiprocess(world_size=2)\n+def examine_arithmetic_shares():\n+    x_enc = crypten.cryptensor([1, 2, 3], ptype=crypten.mpc.arithmetic)\n+    \n+    rank = comm.get().get_rank()\n+    crypten.print(f\"\\nRank {rank}:\\n {x_enc}\\n\", in_order=True)\n+    # print(x_enc[2])\n+    # print(x_enc)\n+    # print(len(x_enc))\n+        \n+x = examine_arithmetic_shares()\n+# print(type(x))\n \n+\n def generate_tensor_with_single_one(N):\n     tensor = torch.zeros(N, dtype=torch.int32)\n     index = torch.randint(0, N, (1,))\n     \n@@ -13,5 +28,5 @@\n N = 10\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n-x_enc = crypten.cryptensor(x, ptype = crypten.mpc.)\n\\ No newline at end of file\n+x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802398970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,20 +2,8 @@\n import torch\n import crypten.mpc as mpc\n import crypten.communicator as comm \n \n-@mpc.run_multiprocess(world_size=2)\n-def examine_arithmetic_shares():\n-    x_enc = crypten.cryptensor([1, 2, 3], ptype=crypten.mpc.arithmetic)\n-    \n-    rank = comm.get().get_rank()\n-    crypten.print(f\"\\nRank {rank}:\\n {x_enc}\\n\", in_order=True)\n-    # print(x_enc[2])\n-    # print(x_enc)\n-    # print(len(x_enc))\n-        \n-x = examine_arithmetic_shares()\n-# print(type(x))\n \n \n def generate_tensor_with_single_one(N):\n     tensor = torch.zeros(N, dtype=torch.int32)\n"
+                },
+                {
+                    "date": 1719802412925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,5 @@\n N = 10\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n-x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n\\ No newline at end of file\n+x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1719802420010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,4 +17,5 @@\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n+y_enc = \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802427359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n-y_enc = \n\\ No newline at end of file\n+y_enc = crypten.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802432505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n-y_enc = crypten.\n\\ No newline at end of file\n+y_enc = crypten.cryptensor(y, ptype=cr)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802466918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,6 @@\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n-y_enc = crypten.cryptensor(y, ptype=cr)\n\\ No newline at end of file\n+y_enc = crypten.cryptensor(y, ptype=crypten.mpc.arithmetic)\n+\n"
+                },
+                {
+                    "date": 1719802472671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,4 +19,5 @@\n \n x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n y_enc = crypten.cryptensor(y, ptype=crypten.mpc.arithmetic)\n \n+print(x)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802481524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n \n x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n y_enc = crypten.cryptensor(y, ptype=crypten.mpc.arithmetic)\n \n-print(x)\n\\ No newline at end of file\n+print(x_enc)\n+print(y_enc)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802513203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import torch\n import crypten.mpc as mpc\n import crypten.communicator as comm \n \n+crypten.init()\n \n-\n def generate_tensor_with_single_one(N):\n     tensor = torch.zeros(N, dtype=torch.int32)\n     index = torch.randint(0, N, (1,))\n     \n"
+                },
+                {
+                    "date": 1719802542302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,12 @@\n     tensor[index] = 1\n     \n     return tensor\n \n+\n+\n+@mpc.run_multiprocess(world_size=2)\n+\n N = 10\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n"
+                },
+                {
+                    "date": 1719802547519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n \n \n \n @mpc.run_multiprocess(world_size=2)\n+def test():\n \n N = 10\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n"
+                },
+                {
+                    "date": 1719802553209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,9 @@\n \n \n \n @mpc.run_multiprocess(world_size=2)\n-def test():\n-\n-N = 10\n+def test(N):\n x = generate_tensor_with_single_one(N)\n y = generate_tensor_with_single_one(N)\n \n x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1719802567211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,15 @@\n \n \n @mpc.run_multiprocess(world_size=2)\n def test(N):\n-x = generate_tensor_with_single_one(N)\n-y = generate_tensor_with_single_one(N)\n+    x = generate_tensor_with_single_one(N)\n+    y = generate_tensor_with_single_one(N)\n \n-x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n-y_enc = crypten.cryptensor(y, ptype=crypten.mpc.arithmetic)\n+    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n\\ No newline at end of file\n+    y_enc = crypten.cryptensor(y, ptype=crypten.mpc.arithmetic)\n \n-print(x_enc)\n-print(y_enc)\n+    print(x_enc)\n+    print(y_enc)\n+    \n+N = 10\n+test()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719802577890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n     print(x_enc)\n     print(y_enc)\n     \n N = 10\n-test()\n\\ No newline at end of file\n+test(N)\n"
+                },
+                {
+                    "date": 1719802590183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n def test(N):\n     x = generate_tensor_with_single_one(N)\n     y = generate_tensor_with_single_one(N)\n \n-    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n+    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.binary)\n     y_enc = crypten.cryptensor(y, ptype=crypten.mpc.arithmetic)\n \n     print(x_enc)\n     print(y_enc)\n"
+                },
+                {
+                    "date": 1719802632380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,12 @@\n     x = generate_tensor_with_single_one(N)\n     y = generate_tensor_with_single_one(N)\n \n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.binary)\n-    y_enc = crypten.cryptensor(y, ptype=crypten.mpc.arithmetic)\n+    y_enc = crypten.cryptensor(y, ptype=crypten.mpc.binary)\n \n     print(x_enc)\n     print(y_enc)\n     \n N = 10\n test(N)\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720513786907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,7 @@\n     print(y_enc)\n     \n N = 10\n test(N)\n-    \n\\ No newline at end of file\n+    \n+    \n+def main():\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720513794467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import crypten\n import torch\n import crypten.mpc as mpc\n import crypten.communicator as comm \n+import random\n \n crypten.init()\n \n def generate_tensor_with_single_one(N):\n@@ -29,5 +30,10 @@\n N = 10\n test(N)\n     \n     \n-def main():\n\\ No newline at end of file\n+def main():\n+\n+\n+# 生成一个 [0, 1) 之间的随机浮点数\n+rand_num = random.random()\n+print(rand_num)\n"
+                },
+                {
+                    "date": 1720513801272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,7 @@\n test(N)\n     \n     \n def main():\n-\n-\n-# 生成一个 [0, 1) 之间的随机浮点数\n-rand_num = random.random()\n-print(rand_num)\n+    # 生成一个 [0, 1) 之间的随机浮点数\n+    rand_num = random.random()\n+    \n"
+                },
+                {
+                    "date": 1720513812865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     return tensor\n \n \n \n-@mpc.run_multiprocess(world_size=2)\n+\n def test(N):\n     x = generate_tensor_with_single_one(N)\n     y = generate_tensor_with_single_one(N)\n \n@@ -29,9 +29,9 @@\n     \n N = 10\n test(N)\n     \n-    \n+   @mpc.run_multiprocess(world_size=2) \n def main():\n     # 生成一个 [0, 1) 之间的随机浮点数\n     rand_num = random.random()\n     \n"
+                },
+                {
+                    "date": 1720513825684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     \n N = 10\n test(N)\n     \n-   @mpc.run_multiprocess(world_size=2) \n+@mpc.run_multiprocess(world_size=2) \n def main():\n     # 生成一个 [0, 1) 之间的随机浮点数\n     rand_num = random.random()\n-    \n+    x_enc = \n"
+                },
+                {
+                    "date": 1720513831173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,6 +32,6 @@\n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n     # 生成一个 [0, 1) 之间的随机浮点数\n-    rand_num = random.random()\n-    x_enc = \n+    x = random.random()\n+    x_enc = crypten.cryptensor()\n"
+                },
+                {
+                    "date": 1720513860632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,13 @@\n test(N)\n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n+    import random\n+\n+# 生成一个 [a, b] 之间的随机整数\n+rand_int = random.randint(a, b)  # a 和 b 是整数\n+print(rand_int)\n+\n     # 生成一个 [0, 1) 之间的随机浮点数\n     x = random.random()\n-    x_enc = crypten.cryptensor()\n+    x_enc = crypten.cryptensor(x, )\n"
+                },
+                {
+                    "date": 1720513869532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,13 +31,8 @@\n test(N)\n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n-    import random\n \n-# 生成一个 [a, b] 之间的随机整数\n-rand_int = random.randint(a, b)  # a 和 b 是整数\n-print(rand_int)\n-\n-    # 生成一个 [0, 1) 之间的随机浮点数\n-    x = random.random()\n+    # 生成一个 [a, b] 之间的随机整数\n+    rand_int = random.randint(a, b)  # a 和 b 是整数\n     x_enc = crypten.cryptensor(x, )\n"
+                },
+                {
+                    "date": 1720513877525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n test(N)\n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n-\n+    a = 2\n+    b = 10\n     # 生成一个 [a, b] 之间的随机整数\n     rand_int = random.randint(a, b)  # a 和 b 是整数\n     x_enc = crypten.cryptensor(x, )\n"
+                },
+                {
+                    "date": 1720513899921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n test(N)\n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n-    a = 2\n+    a = 0\n     b = 10\n     # 生成一个 [a, b] 之间的随机整数\n     rand_int = random.randint(a, b)  # a 和 b 是整数\n     x_enc = crypten.cryptensor(x, )\n"
+                },
+                {
+                    "date": 1720513907317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,8 @@\n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n     a = 0\n-    b = 10\n+    b = 1\n     # 生成一个 [a, b] 之间的随机整数\n-    rand_int = random.randint(a, b)  # a 和 b 是整数\n+    x = random.randint(a, b)  # a 和 b 是整数\n     x_enc = crypten.cryptensor(x, )\n"
+                },
+                {
+                    "date": 1720513913462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,5 @@\n     a = 0\n     b = 1\n     # 生成一个 [a, b] 之间的随机整数\n     x = random.randint(a, b)  # a 和 b 是整数\n-    x_enc = crypten.cryptensor(x, )\n+    x_enc = crypten.cryptensor(x, ptype = c)\n"
+                },
+                {
+                    "date": 1720513922818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,5 @@\n     a = 0\n     b = 1\n     # 生成一个 [a, b] 之间的随机整数\n     x = random.randint(a, b)  # a 和 b 是整数\n-    x_enc = crypten.cryptensor(x, ptype = c)\n+    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arith)\n"
+                },
+                {
+                    "date": 1720513946398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,7 @@\n     a = 0\n     b = 1\n     # 生成一个 [a, b] 之间的随机整数\n     x = random.randint(a, b)  # a 和 b 是整数\n-    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arith)\n+    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n+    a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n+    \n"
+                },
+                {
+                    "date": 1720513952980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,5 +37,5 @@\n     # 生成一个 [a, b] 之间的随机整数\n     x = random.randint(a, b)  # a 和 b 是整数\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n-    \n+    b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720513960939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,4 +38,6 @@\n     x = random.randint(a, b)  # a 和 b 是整数\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n+\n+    interval\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720513966479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,5 @@\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n-    interval\n\\ No newline at end of file\n+    intvlTest\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720513972261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,5 @@\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n-    intvlTest\n\\ No newline at end of file\n+    intvlTest(x_enc, a_enc,)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720513978680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,18 +15,9 @@\n     return tensor\n \n \n \n-\n-def test(N):\n-    x = generate_tensor_with_single_one(N)\n-    y = generate_tensor_with_single_one(N)\n-\n-    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.binary)\n-    y_enc = crypten.cryptensor(y, ptype=crypten.mpc.binary)\n-\n-    print(x_enc)\n-    print(y_enc)\n+def \n     \n N = 10\n test(N)\n     \n@@ -39,5 +30,5 @@\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n-    intvlTest(x_enc, a_enc,)\n\\ No newline at end of file\n+    intvlTest(x_enc, a_enc,b_enc)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720513984898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     return tensor\n \n \n \n-def \n+def intvlTest()\n     \n N = 10\n test(N)\n     \n"
+                },
+                {
+                    "date": 1720513992025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,23 +5,14 @@\n import random\n \n crypten.init()\n \n-def generate_tensor_with_single_one(N):\n-    tensor = torch.zeros(N, dtype=torch.int32)\n-    index = torch.randint(0, N, (1,))\n-    \n-    tensor[index] = 1\n-    \n-    return tensor\n \n \n+def intvlTest():\n+    \n \n-def intvlTest()\n     \n-N = 10\n-test(N)\n-    \n @mpc.run_multiprocess(world_size=2) \n def main():\n     a = 0\n     b = 1\n"
+                },
+                {
+                    "date": 1720513997807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n crypten.init()\n \n \n \n-def intvlTest():\n+def intvlTest(x,a,b):\n     \n \n     \n @mpc.run_multiprocess(world_size=2) \n"
+                },
+                {
+                    "date": 1720514013655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n \n \n def intvlTest(x,a,b):\n+    cmp\n     \n \n     \n @mpc.run_multiprocess(world_size=2) \n"
+                },
+                {
+                    "date": 1720514021297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n \n \n \n def intvlTest(x,a,b):\n-    cmp\n     \n+    \n \n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n"
+                },
+                {
+                    "date": 1720514252644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n \n \n \n def intvlTest(x,a,b):\n+    cmp\n     \n-    \n \n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n"
+                },
+                {
+                    "date": 1720514258771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n \n def intvlTest(x,a,b):\n-    cmp\n+    cmp_\n     \n \n     \n @mpc.run_multiprocess(world_size=2) \n"
+                },
+                {
+                    "date": 1720514264713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n \n def intvlTest(x,a,b):\n-    cmp_\n+    cmp_a_x = \n     \n \n     \n @mpc.run_multiprocess(world_size=2) \n"
+                },
+                {
+                    "date": 1720514270290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n \n def intvlTest(x,a,b):\n-    cmp_a_x = \n+    cmp_a_x = x.ge(a)\n     \n \n     \n @mpc.run_multiprocess(world_size=2) \n"
+                },
+                {
+                    "date": 1720514325113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import crypten\n import torch\n import crypten.mpc as mpc\n import crypten.communicator as comm \n+import c\n import random\n \n crypten.init()\n \n"
+                },
+                {
+                    "date": 1720514333415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import crypten\n import torch\n import crypten.mpc as mpc\n import crypten.communicator as comm \n-import c\n+import crypten.common as common\n import random\n \n crypten.init()\n \n"
+                },
+                {
+                    "date": 1720514342087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \n def intvlTest(x,a,b):\n     cmp_a_x = x.ge(a)\n     \n+    \n \n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n"
+                },
+                {
+                    "date": 1720514348896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n def main():\n     a = 0\n     b = 1\n     # 生成一个 [a, b] 之间的随机整数\n-    x = random.randint(a, b)  # a 和 b 是整数\n+    x = random.randint(a, b)  # a 和 b 是整数\\\n+    print(\"x\")\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n"
+                },
+                {
+                    "date": 1720514362025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \n def intvlTest(x,a,b):\n     cmp_a_x = x.ge(a)\n     \n+    print(\"cmp_a_x\")\n     \n \n     \n @mpc.run_multiprocess(world_size=2) \n@@ -20,9 +21,9 @@\n     a = 0\n     b = 1\n     # 生成一个 [a, b] 之间的随机整数\n     x = random.randint(a, b)  # a 和 b 是整数\\\n-    print(\"x\")\n+    print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n"
+                },
+                {
+                    "date": 1720514373105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n def intvlTest(x,a,b):\n     cmp_a_x = x.ge(a)\n     \n-    print(\"cmp_a_x\")\n+    print(\"cmp_a_x:\", cmp_a_x.get_plain_text())\n     \n \n     \n @mpc.run_multiprocess(world_size=2) \n"
+                },
+                {
+                    "date": 1720514402536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,7 @@\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n-    intvlTest(x_enc, a_enc,b_enc)\n\\ No newline at end of file\n+    intvlTest(x_enc, a_enc,b_enc)\n+    \n+main()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720514431883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n def main():\n     a = 0\n     b = 1\n     # 生成一个 [a, b] 之间的随机整数\n-    x = random.randint(a, b)  # a 和 b 是整数\\\n+    rand_num = random.random()  # a 和 b 是整数\\\n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720514478060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,13 @@\n \n     \n @mpc.run_multiprocess(world_size=2) \n def main():\n+    # 区间范围\n     a = 0\n     b = 1\n     # 生成一个 [a, b] 之间的随机整数\n-    rand_num = random.random()  # a 和 b 是整数\\\n+    x = random.random()  # a 和 b 是整数\\\n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720514485586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,10 @@\n def main():\n     # 区间范围\n     a = 0\n     b = 1\n+    \n+    #随机数范围\n     # 生成一个 [a, b] 之间的随机整数\n     x = random.random()  # a 和 b 是整数\\\n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720514497241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n     a = 0\n     b = 1\n     \n     #随机数范围\n-    # 生成一个 [a, b] 之间的随机整数\n     x = random.random()  # a 和 b 是整数\\\n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720514508110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     a = 0\n     b = 1\n     \n     #随机数范围\n-    x = random.random()  # a 和 b 是整数\\\n+    x = random.randint()  # a 和 b 是整数\\\n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720514517410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     a = 0\n     b = 1\n     \n     #随机数范围\n-    x = random.randint()  # a 和 b 是整数\\\n+    x = random.randint(0,) \n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720514524574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     a = 0\n     b = 1\n     \n     #随机数范围\n-    x = random.randint(0,) \n+    x = random.randint(-10, 10) \n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n"
+                },
+                {
+                    "date": 1720514548066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n crypten.init()\n \n \n+def gen\n \n def intvlTest(x,a,b):\n     cmp_a_x = x.ge(a)\n     \n"
+                },
+                {
+                    "date": 1720514590410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n \n crypten.init()\n \n \n-def gen\n+def generate_random():\n+    \n \n def intvlTest(x,a,b):\n     cmp_a_x = x.ge(a)\n     \n"
+                },
+                {
+                    "date": 1720514595430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+import crypten\n+import torch\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n+import crypten.common as common\n+import random\n+\n+crypten.init()\n+\n+\n+def generate_random():\n+    \n+\n+def intvlTest(x,a,b):\n+    cmp_a_x = x.ge(a)\n+    \n+    print(\"cmp_a_x:\", cmp_a_x.get_plain_text())\n+    \n+\n+    \n+@mpc.run_multiprocess(world_size=2) \n+def main():\n+    # 区间范围\n+    a = 0\n+    b = 1\n+    \n+    #随机数范围\n+    x = random.randint(-10, 10) \n+    print(\"x:\", x)\n+    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n+    a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n+    b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n+\n+    intvlTest(x_enc, a_enc,b_enc)\n+    \n+main()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720514603397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,49 +24,13 @@\n     a = 0\n     b = 1\n     \n     #随机数范围\n-    x = random.randint(-10, 10) \n+   \n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n     intvlTest(x_enc, a_enc,b_enc)\n     \n-main()\n-import crypten\n-import torch\n-import crypten.mpc as mpc\n-import crypten.communicator as comm \n-import crypten.common as common\n-import random\n-\n-crypten.init()\n-\n-\n-def generate_random():\n-    \n-\n-def intvlTest(x,a,b):\n-    cmp_a_x = x.ge(a)\n-    \n-    print(\"cmp_a_x:\", cmp_a_x.get_plain_text())\n-    \n-\n-    \n-@mpc.run_multiprocess(world_size=2) \n-def main():\n-    # 区间范围\n-    a = 0\n-    b = 1\n-    \n-    #随机数范围\n-    x = random.randint(-10, 10) \n-    print(\"x:\", x)\n-    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n-    a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n-    b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n-\n-    intvlTest(x_enc, a_enc,b_enc)\n-    \n main()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720514608805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,14 +24,13 @@\n     a = 0\n     b = 1\n     \n     #随机数范围\n-   \n+    x = random.randint(-10, 10) \n     print(\"x:\", x)\n     x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n     a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n     b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n \n     intvlTest(x_enc, a_enc,b_enc)\n-\n-x = random.randint(-10, 10)    \n+    \n main()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720514805554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,35 @@\n+import crypten\n+import torch\n+import crypten.mpc as mpc\n+import crypten.communicator as comm \n+import crypten.common as common\n+import random\n+\n+crypten.init()\n+\n+\n+def intvlTest(x,a,b):\n+    cmp_a_x = x.ge(a)\n+    \n+    print(\"cmp_a_x:\", cmp_a_x.get_plain_text())\n+    \n+\n+    \n+@mpc.run_multiprocess(world_size=2) \n+def main():\n+    # 区间范围\n+    a = 0\n+    b = 1\n+    \n+    #随机数范围\n+    x = random.randint(-10, 10) \n+    \n+    x_enc = crypten.cryptensor(x, ptype = crypten.mpc.arithmetic)\n+    a_enc = crypten.cryptensor(a, ptype = crypten.mpc.arithmetic)\n+    b_enc = crypten.cryptensor(b, ptype = crypten.mpc.arithmetic)\n+    rank = comm.get().get_rank()\n+    crypten.print(f\"\\nRank {rank}:\\n {x}\\n\", in_order=True)\n+\n+    intvlTest(x_enc, a_enc,b_enc)\n+    \n+main()\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1719802073795,
+            "name": "Commit-0",
+            "content": "import crt"
+        }
+    ]
+}

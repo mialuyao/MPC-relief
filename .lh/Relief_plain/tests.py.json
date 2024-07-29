@@ -1,0 +1,62 @@
+{
+    "sourceFile": "Relief_plain/tests.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1719214294760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719215840540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n \tprint(\"data:\", data)\n  \n \tprint(\"=====begin relief======\")\n-\tfs = ReliefF(n_features_to_keep=50)\n+\tfs = ReliefF(n_features_to_keep=40)\n \tfs.fit(data, int_labels)\n \tdata_trans = fs.transform(data)\n \tdata_trans_pd = pd.DataFrame(data_trans)\n \tlabel_trans_pd = pd.DataFrame(raw_labels)\n"
+                },
+                {
+                    "date": 1719216019211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n \tprint(\"data:\", data)\n  \n \tprint(\"=====begin relief======\")\n-\tfs = ReliefF(n_features_to_keep=40)\n+\tfs = ReliefF(n_features_to_keep=45)\n \tfs.fit(data, int_labels)\n \tdata_trans = fs.transform(data)\n \tdata_trans_pd = pd.DataFrame(data_trans)\n \tlabel_trans_pd = pd.DataFrame(raw_labels)\n"
+                },
+                {
+                    "date": 1719216158237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n \tprint(\"data:\", data)\n  \n \tprint(\"=====begin relief======\")\n-\tfs = ReliefF(n_features_to_keep=45)\n+\tfs = ReliefF(n_features_to_keep=55)\n \tfs.fit(data, int_labels)\n \tdata_trans = fs.transform(data)\n \tdata_trans_pd = pd.DataFrame(data_trans)\n \tlabel_trans_pd = pd.DataFrame(raw_labels)\n"
+                },
+                {
+                    "date": 1719216338869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n \tprint(\"data:\", data)\n  \n \tprint(\"=====begin relief======\")\n-\tfs = ReliefF(n_features_to_keep=55)\n+\tfs = ReliefF(n_features_to_keep=48)\n \tfs.fit(data, int_labels)\n \tdata_trans = fs.transform(data)\n \tdata_trans_pd = pd.DataFrame(data_trans)\n \tlabel_trans_pd = pd.DataFrame(raw_labels)\n"
+                },
+                {
+                    "date": 1719220362522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n if __name__ == '__main__':\n \t#os.chdir(r'E:/Project_ML/ReliefF')\n \n-\twith open(r'data/sonar.csv', 'r', encoding='utf-8') as csvfile:\n+\twith open(r'data/secom.csv', 'r', encoding='utf-8') as csvfile:\n \t\tspamreader = csv.reader(csvfile)\n \t\tliver = np.array(list(spamreader))\n \t\tdata = (liver[:, :-1]).astype(np.float64)  #修改，获得对应数据集的data与label\n \t\traw_labels = (liver[:, -1])\n"
+                },
+                {
+                    "date": 1719220377559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n \tprint(\"data:\", data)\n  \n \tprint(\"=====begin relief======\")\n-\tfs = ReliefF(n_features_to_keep=48)\n+\tfs = ReliefF(n_features_to_keep=400)\n \tfs.fit(data, int_labels)\n \tdata_trans = fs.transform(data)\n \tdata_trans_pd = pd.DataFrame(data_trans)\n \tlabel_trans_pd = pd.DataFrame(raw_labels)\n"
+                },
+                {
+                    "date": 1719220384662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n \tprint(\"data:\", data)\n  \n \tprint(\"=====begin relief======\")\n-\tfs = ReliefF(n_features_to_keep=400)\n+\tfs = ReliefF(n_features_to_keep=4)\n \tfs.fit(data, int_labels)\n \tdata_trans = fs.transform(data)\n \tdata_trans_pd = pd.DataFrame(data_trans)\n \tlabel_trans_pd = pd.DataFrame(raw_labels)\n"
+                },
+                {
+                    "date": 1719220963916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,16 +15,17 @@\n \t\tliver = np.array(list(spamreader))\n \t\tdata = (liver[:, :-1]).astype(np.float64)  #修改，获得对应数据集的data与label\n \t\traw_labels = (liver[:, -1])\n   \n+  \n \t# 创建标签映射\n \tunique_labels = np.unique(raw_labels)\n \tlabel_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n \tprint(\"data:\", data)\n  \n \tprint(\"=====begin relief======\")\n-\tfs = ReliefF(n_features_to_keep=4)\n+\tfs = ReliefF(n_features_to_keep=500)\n \tfs.fit(data, int_labels)\n \tdata_trans = fs.transform(data)\n \tdata_trans_pd = pd.DataFrame(data_trans)\n \tlabel_trans_pd = pd.DataFrame(raw_labels)\n"
+                },
+                {
+                    "date": 1719220970400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,11 @@\n \t\tspamreader = csv.reader(csvfile)\n \t\tliver = np.array(list(spamreader))\n \t\tdata = (liver[:, :-1]).astype(np.float64)  #修改，获得对应数据集的data与label\n \t\traw_labels = (liver[:, -1])\n+\t\n+\tdata = \n   \n-  \n \t# 创建标签映射\n \tunique_labels = np.unique(raw_labels)\n \tlabel_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n \tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n"
+                },
+                {
+                    "date": 1719220978885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t\tliver = np.array(list(spamreader))\n \t\tdata = (liver[:, :-1]).astype(np.float64)  #修改，获得对应数据集的data与label\n \t\traw_labels = (liver[:, -1])\n \t\n-\tdata = np.get\n+\tdata = np.genfromtxt()\n   \n \t# 创建标签映射\n \tunique_labels = np.unique(raw_labels)\n \tlabel_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n"
+                },
+                {
+                    "date": 1719220985485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,46 @@\n+\"\"\"\n+    Unit tests for ReliefF.\n+\"\"\"\n+\n+from ReliefF import ReliefF\n+import csv, os\n+import numpy as np\n+import pandas as pd\n+\n+if __name__ == '__main__':\n+\t#os.chdir(r'E:/Project_ML/ReliefF')\n+\n+\twith open(r'data/secom.csv', 'r', encoding='utf-8') as csvfile:\n+\t\tspamreader = csv.reader(csvfile)\n+\t\tliver = np.array(list(spamreader))\n+\t\tdata = (liver[:, :-1]).astype(np.float64)  #修改，获得对应数据集的data与label\n+\t\traw_labels = (liver[:, -1])\n+\t\n+\tdata = np.genfromtxt('data/secom.csv')\n+  \n+\t# 创建标签映射\n+\tunique_labels = np.unique(raw_labels)\n+\tlabel_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n+\tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n+\tprint(\"data:\", data)\n+ \n+\tprint(\"=====begin relief======\")\n+\tfs = ReliefF(n_features_to_keep=500)\n+\tfs.fit(data, int_labels)\n+\tdata_trans = fs.transform(data)\n+\tdata_trans_pd = pd.DataFrame(data_trans)\n+\tlabel_trans_pd = pd.DataFrame(raw_labels)\n+\tdata_pd = pd.concat([data_trans_pd, label_trans_pd], axis=1)\n+\tdata_pd.to_csv(\"after_selected\", index=False)\n+\t# print(\"data_trans:\", data_trans)\n+\t'''\n+\ttmp = np.array([[ 1.61311827,  0.19955703],\n+\t\t[-0.21997067,  0.86474714],\n+\t\t[-0.58658846, -1.46341823],\n+\t\t[-1.31982404, -0.79822813],\n+\t\t[ 0.5132649 ,  1.19734219]])\n+\t\n+\ty = np.array([1, 1, 1, 2, 2])\n+\tfs = ReliefF(2)\n+\tfs.fit(tmp, y)\n+\t'''\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1719214294760,
+            "name": "Commit-0",
+            "content": "\"\"\"\n    Unit tests for ReliefF.\n\"\"\"\n\nfrom ReliefF import ReliefF\nimport csv, os\nimport numpy as np\nimport pandas as pd\n\nif __name__ == '__main__':\n\t#os.chdir(r'E:/Project_ML/ReliefF')\n\n\twith open(r'data/sonar.csv', 'r', encoding='utf-8') as csvfile:\n\t\tspamreader = csv.reader(csvfile)\n\t\tliver = np.array(list(spamreader))\n\t\tdata = (liver[:, :-1]).astype(np.float64)  #修改，获得对应数据集的data与label\n\t\traw_labels = (liver[:, -1])\n  \n\t# 创建标签映射\n\tunique_labels = np.unique(raw_labels)\n\tlabel_to_int = {label: idx for idx, label in enumerate(unique_labels)}\n\tint_labels = np.array([label_to_int[label] for label in raw_labels], dtype=np.uint8)\n\tprint(\"data:\", data)\n \n\tprint(\"=====begin relief======\")\n\tfs = ReliefF(n_features_to_keep=50)\n\tfs.fit(data, int_labels)\n\tdata_trans = fs.transform(data)\n\tdata_trans_pd = pd.DataFrame(data_trans)\n\tlabel_trans_pd = pd.DataFrame(raw_labels)\n\tdata_pd = pd.concat([data_trans_pd, label_trans_pd], axis=1)\n\tdata_pd.to_csv(\"after_selected\", index=False)\n\t# print(\"data_trans:\", data_trans)\n\t'''\n\ttmp = np.array([[ 1.61311827,  0.19955703],\n\t\t[-0.21997067,  0.86474714],\n\t\t[-0.58658846, -1.46341823],\n\t\t[-1.31982404, -0.79822813],\n\t\t[ 0.5132649 ,  1.19734219]])\n\t\n\ty = np.array([1, 1, 1, 2, 2])\n\tfs = ReliefF(2)\n\tfs.fit(tmp, y)\n\t'''"
+        }
+    ]
+}

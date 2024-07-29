@@ -1,0 +1,50 @@
+{
+    "sourceFile": "relief_mpc/launch_distributed.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1718802180870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1718802610864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,10 +73,10 @@\n     #if \"RANK\" in os.environ and os.environ[\"RANK\"] != \"0\":\n     #    level = logging.CRITICAL\n     logging.getLogger().setLevel(level)\n     run_mpc_linear_svm(\n-        args.epoch,\n-        args.lr\n+        # args.epoch,\n+        args.instance\n     )\n \n \n def main(run_experiment):\n"
+                },
+                {
+                    "date": 1718802615989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,15 +50,15 @@\n     default=True,\n     action=\"store_true\",\n     help=\"Run example in distributed mode\",\n )\n+parser.add_argument(\n+    \"--epoch\", \n+    default=100, \n+    type=int, \n+    help=\"epoch\"\n+)\n # parser.add_argument(\n-#     \"--epoch\", \n-#     default=100, \n-#     type=int, \n-#     help=\"epoch\"\n-# )\n-# parser.add_argument(\n #     \"--lr\", \n #     default=0.5, \n #     type=float, \n #     help=\"learning rate\"\n"
+                },
+                {
+                    "date": 1718802624963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,12 +51,12 @@\n     action=\"store_true\",\n     help=\"Run example in distributed mode\",\n )\n parser.add_argument(\n-    \"--epoch\", \n+    \"--instance\", \n     default=100, \n     type=int, \n-    help=\"epoch\"\n+    help=\"number of instance\"\n )\n # parser.add_argument(\n #     \"--lr\", \n #     default=0.5, \n"
+                },
+                {
+                    "date": 1718802675634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n \n \n def _run_experiment(args):\n     # only import here to initialize crypten within the subprocesses\n-    from test import run_mpc_linear_svm\n+    from test import relief_mpc_linear_svm\n     # Only Rank 0 will display logs.\n     level = logging.INFO\n     #if \"RANK\" in os.environ and os.environ[\"RANK\"] != \"0\":\n     #    level = logging.CRITICAL\n"
+                },
+                {
+                    "date": 1718802681115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n \n \n def _run_experiment(args):\n     # only import here to initialize crypten within the subprocesses\n-    from test import relief_mpc_linear_svm\n+    from test import relief_mpc\n     # Only Rank 0 will display logs.\n     level = logging.INFO\n     #if \"RANK\" in os.environ and os.environ[\"RANK\"] != \"0\":\n     #    level = logging.CRITICAL\n"
+                },
+                {
+                    "date": 1718804042133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,11 +72,11 @@\n     level = logging.INFO\n     #if \"RANK\" in os.environ and os.environ[\"RANK\"] != \"0\":\n     #    level = logging.CRITICAL\n     logging.getLogger().setLevel(level)\n-    run_mpc_linear_svm(\n+    relief_mpc(\n         # args.epoch,\n-        args.instance\n+        args.instances\n     )\n \n \n def main(run_experiment):\n"
+                },
+                {
+                    "date": 1718804062856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     action=\"store_true\",\n     help=\"Run example in distributed mode\",\n )\n parser.add_argument(\n-    \"--instance\", \n+    \"--instances\", \n     default=100, \n     type=int, \n     help=\"number of instance\"\n )\n"
+                },
+                {
+                    "date": 1718804170614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,94 @@\n+\n+\"\"\"\n+# rank 0\n+python launch_distributed.py \\\n+    --world_size 2 \\\n+    --rank 0 \\\n+    --master_address 127.0.0.1 \\\n+    --master_port 12345 \\\n+    --distributed\n+\"\"\"\n+\n+import argparse\n+import logging\n+import os\n+\n+from distributed_launcher import DistributedLauncher\n+\n+\n+\n+parser = argparse.ArgumentParser(description=\"SVM_train\")\n+parser.add_argument(\n+    \"--world_size\",\n+    type=int,\n+    default=2,\n+    help=\"The number of parties to launch. Each party acts as its own process\",\n+)\n+parser.add_argument(\n+    \"--rank\",\n+    type=int,\n+    help=\"The rank of the current party. Each party acts as its own process\",\n+)\n+parser.add_argument(\n+    \"--master_address\",\n+    type=str,\n+    help=\"master IP Address\",\n+)\n+parser.add_argument(\n+    \"--master_port\",\n+    type=int,\n+    help=\"master port\",\n+)\n+parser.add_argument(\n+    \"--backend\",\n+    type=str,\n+    default=\"gloo\",\n+    help=\"backend for torhc.distributed, 'NCCL' or 'gloo'.\",\n+)\n+parser.add_argument(\n+    \"--distributed\",\n+    default=True,\n+    action=\"store_true\",\n+    help=\"Run example in distributed mode\",\n+)\n+parser.add_argument(\n+    \"--instance\", \n+    default=100, \n+    type=int, \n+    help=\"number of instance\"\n+)\n+# parser.add_argument(\n+#     \"--lr\", \n+#     default=0.5, \n+#     type=float, \n+#     help=\"learning rate\"\n+# )\n+\n+\n+def _run_experiment(args):\n+    # only import here to initialize crypten within the subprocesses\n+    from test import relief_mpc\n+    # Only Rank 0 will display logs.\n+    level = logging.INFO\n+    #if \"RANK\" in os.environ and os.environ[\"RANK\"] != \"0\":\n+    #    level = logging.CRITICAL\n+    logging.getLogger().setLevel(level)\n+    relief_mpc(\n+        # args.epoch,\n+        args.instances\n+    )\n+\n+\n+def main(run_experiment):\n+    args = parser.parse_args()\n+    if args.distributed:\n+        launcher = DistributedLauncher(args.world_size, args.rank, args.master_address, args.master_port, args.backend, run_experiment, args)\n+        launcher.start()\n+        #launcher.join()\n+        #launcher.terminate()\n+    else:\n+        run_experiment(args)\n+\n+\n+if __name__ == \"__main__\":\n+    main(_run_experiment)\n"
+                }
+            ],
+            "date": 1718802180870,
+            "name": "Commit-0",
+            "content": "\n\"\"\"\n# rank 0\npython launch_distributed.py \\\n    --world_size 2 \\\n    --rank 0 \\\n    --master_address 127.0.0.1 \\\n    --master_port 12345 \\\n    --distributed\n\"\"\"\n\nimport argparse\nimport logging\nimport os\n\nfrom distributed_launcher import DistributedLauncher\n\n\n\nparser = argparse.ArgumentParser(description=\"SVM_train\")\nparser.add_argument(\n    \"--world_size\",\n    type=int,\n    default=2,\n    help=\"The number of parties to launch. Each party acts as its own process\",\n)\nparser.add_argument(\n    \"--rank\",\n    type=int,\n    help=\"The rank of the current party. Each party acts as its own process\",\n)\nparser.add_argument(\n    \"--master_address\",\n    type=str,\n    help=\"master IP Address\",\n)\nparser.add_argument(\n    \"--master_port\",\n    type=int,\n    help=\"master port\",\n)\nparser.add_argument(\n    \"--backend\",\n    type=str,\n    default=\"gloo\",\n    help=\"backend for torhc.distributed, 'NCCL' or 'gloo'.\",\n)\nparser.add_argument(\n    \"--distributed\",\n    default=True,\n    action=\"store_true\",\n    help=\"Run example in distributed mode\",\n)\n# parser.add_argument(\n#     \"--epoch\", \n#     default=100, \n#     type=int, \n#     help=\"epoch\"\n# )\n# parser.add_argument(\n#     \"--lr\", \n#     default=0.5, \n#     type=float, \n#     help=\"learning rate\"\n# )\n\n\ndef _run_experiment(args):\n    # only import here to initialize crypten within the subprocesses\n    from test import run_mpc_linear_svm\n    # Only Rank 0 will display logs.\n    level = logging.INFO\n    #if \"RANK\" in os.environ and os.environ[\"RANK\"] != \"0\":\n    #    level = logging.CRITICAL\n    logging.getLogger().setLevel(level)\n    run_mpc_linear_svm(\n        args.epoch,\n        args.lr\n    )\n\n\ndef main(run_experiment):\n    args = parser.parse_args()\n    if args.distributed:\n        launcher = DistributedLauncher(args.world_size, args.rank, args.master_address, args.master_port, args.backend, run_experiment, args)\n        launcher.start()\n        #launcher.join()\n        #launcher.terminate()\n    else:\n        run_experiment(args)\n\n\nif __name__ == \"__main__\":\n    main(_run_experiment)\n"
+        }
+    ]
+}

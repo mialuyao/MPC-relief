@@ -1,0 +1,18 @@
+{
+    "sourceFile": "multiparty/distributed_launcher.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1718524829172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1718524829172,
+            "name": "Commit-0",
+            "content": "#!/usr/bin/env python3\n\n# Copyright (c) Facebook, Inc. and its affiliates.\n#\n# This source code is licensed under the MIT license found in the\n# LICENSE file in the root directory of this source tree.\n\nimport logging\nimport multiprocessing\nimport os\nimport uuid\n\nimport crypten\n\n\nclass DistributedLauncher:\n\n    # run_process_fn will be run in subprocesses.\n    def __init__(self, world_size, rank, master_address, master_port, backend, run_process_fn, fn_args=None):\n        multiprocessing.set_start_method(\"spawn\")\n\n        # Specify necessary environmental variables for torch.distributed\n        env = os.environ.copy()\n        env[\"RENDEZVOUS\"] = \"env://\"\n        env[\"WORLD_SIZE\"] = str(world_size)\n        env[\"RANK\"] = str(rank)\n        env[\"MASTER_ADDR\"] = master_address\n        env[\"MASTER_PORT\"] = str(master_port)\n        \n        self.processes = []\n        \n        # prepare process for the current rank\n        process_name = \"process \" + str(rank)\n        process = multiprocessing.Process(\n            target=self.__class__._run_process,\n            name=process_name,\n            args=(rank, world_size, env, run_process_fn, fn_args),\n        )\n        self.processes.append(process)\n\n        if crypten.mpc.ttp_required():\n            ttp_process = multiprocessing.Process(\n                target=self.__class__._run_process,\n                name=\"TTP\",\n                args=(\n                    world_size,\n                    world_size,\n                    env,\n                    crypten.mpc.provider.TTPServer,\n                    None,\n                ),\n            )\n            self.processes.append(ttp_process)\n\n    @classmethod\n    def _run_process(cls, rank, world_size, env, run_process_fn, fn_args):\n        for env_key, env_value in env.items():\n            os.environ[env_key] = env_value\n        os.environ[\"RANK\"] = str(rank)\n        orig_logging_level = logging.getLogger().level\n        logging.getLogger().setLevel(logging.INFO)\n        crypten.init()\n        logging.getLogger().setLevel(orig_logging_level)\n        if fn_args is None:\n            run_process_fn()\n        else:\n            run_process_fn(fn_args)\n\n    def start(self):\n        for process in self.processes:\n            process.start()\n\n    def join(self):\n        for process in self.processes:\n            process.join()\n            assert (\n                process.exitcode == 0\n            ), f\"{process.name} has non-zero exit code {process.exitcode}\"\n\n    def terminate(self):\n        for process in self.processes:\n            process.terminate()\n"
+        }
+    ]
+}

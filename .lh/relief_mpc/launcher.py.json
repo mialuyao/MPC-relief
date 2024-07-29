@@ -1,0 +1,54 @@
+{
+    "sourceFile": "relief_mpc/launcher.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1718802169150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1718802578549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,10 +52,10 @@\n     )\n     from test import run_mpc_linear_svm\n \n     run_mpc_linear_svm(\n-        args.epoch, \n-        args.lr\n+        # args.epoch, \n+        args.instance\n     )\n \n \n def main(run_experiment):\n"
+                },
+                {
+                    "date": 1718802588839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,15 +26,15 @@\n     default=False,\n     action=\"store_true\",\n     help=\"Run example in multiprocess mode\",\n )\n+parser.add_argument(\n+    \"--epoch\", \n+    default=100, \n+    type=int, \n+    help=\"epoch\"\n+)\n # parser.add_argument(\n-#     \"--epoch\", \n-#     default=100, \n-#     type=int, \n-#     help=\"epoch\"\n-# )\n-# parser.add_argument(\n #     \"--lr\", \n #     default=0.5, \n #     type=float, \n #     help=\"learning rate\"\n"
+                },
+                {
+                    "date": 1718802603264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,12 +27,12 @@\n     action=\"store_true\",\n     help=\"Run example in multiprocess mode\",\n )\n parser.add_argument(\n-    \"--epoch\", \n+    \"--instance\", \n     default=100, \n     type=int, \n-    help=\"epoch\"\n+    help=\"number of instance\"\n )\n # parser.add_argument(\n #     \"--lr\", \n #     default=0.5, \n"
+                },
+                {
+                    "date": 1718802656997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n     logging.basicConfig(\n         level=level,\n         format=\"%(asctime)s - %(process)d - %(name)s - %(levelname)s - %(message)s\",\n     )\n-    from test import run_mpc_linear_svm\n+    from test import relief_mpc_linear_svm\n \n     run_mpc_linear_svm(\n         # args.epoch, \n         args.instance\n"
+                },
+                {
+                    "date": 1718802663434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,11 +49,11 @@\n     logging.basicConfig(\n         level=level,\n         format=\"%(asctime)s - %(process)d - %(name)s - %(levelname)s - %(message)s\",\n     )\n-    from test import relief_mpc_linear_svm\n+    from test import relief_mpc\n \n-    run_mpc_linear_svm(\n+    relief_mpc_mpc_linear_svm(\n         # args.epoch, \n         args.instance\n     )\n \n"
+                },
+                {
+                    "date": 1718804033517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     action=\"store_true\",\n     help=\"Run example in multiprocess mode\",\n )\n parser.add_argument(\n-    \"--instance\", \n+    \"--instances\", \n     default=100, \n     type=int, \n     help=\"number of instance\"\n )\n@@ -51,9 +51,9 @@\n         format=\"%(asctime)s - %(process)d - %(name)s - %(levelname)s - %(message)s\",\n     )\n     from test import relief_mpc\n \n-    relief_mpc_mpc_linear_svm(\n+    relief_mpc(\n         # args.epoch, \n         args.instance\n     )\n \n"
+                },
+                {
+                    "date": 1718804066247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     from test import relief_mpc\n \n     relief_mpc(\n         # args.epoch, \n-        args.instance\n+        args.instances\n     )\n \n \n def main(run_experiment):\n"
+                },
+                {
+                    "date": 1718804160775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     from test import relief_mpc\n \n     relief_mpc(\n         # args.epoch, \n-        args.instances\n+        args.instance\n     )\n \n \n def main(run_experiment):\n"
+                },
+                {
+                    "date": 1718804166989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     action=\"store_true\",\n     help=\"Run example in multiprocess mode\",\n )\n parser.add_argument(\n-    \"--instances\", \n+    \"--instance\", \n     default=100, \n     type=int, \n     help=\"number of instance\"\n )\n"
+                }
+            ],
+            "date": 1718802169150,
+            "name": "Commit-0",
+            "content": "# File: launcher.py\n# Time: 2024/ 06/ 17 16: 48: 12\n# Desc : SVM训练\n\"\"\"\nTo run mpc_linear_svm example in multiprocess mode:\n\n$ python3 examples/mpc_linear_svm/launcher.py --multiprocess\n\"\"\"\n\nimport argparse\nimport logging\nimport os\n\nfrom examples.multiprocess_launcher import MultiProcessLauncher\n\n\nparser = argparse.ArgumentParser(description=\"feature selection based on one-hot matrix\")\nparser.add_argument(\n    \"--world_size\",\n    type=int,\n    default=2,\n    help=\"The number of parties to launch. Each party acts as its own process\",\n)\nparser.add_argument(\n    \"--multiprocess\",\n    default=False,\n    action=\"store_true\",\n    help=\"Run example in multiprocess mode\",\n)\n# parser.add_argument(\n#     \"--epoch\", \n#     default=100, \n#     type=int, \n#     help=\"epoch\"\n# )\n# parser.add_argument(\n#     \"--lr\", \n#     default=0.5, \n#     type=float, \n#     help=\"learning rate\"\n# )\n\n\ndef _run_experiment(args):\n    level = logging.INFO\n    if \"RANK\" in os.environ and os.environ[\"RANK\"] != \"0\":\n        level = logging.CRITICAL\n    logging.getLogger().setLevel(level)\n    logging.basicConfig(\n        level=level,\n        format=\"%(asctime)s - %(process)d - %(name)s - %(levelname)s - %(message)s\",\n    )\n    from test import run_mpc_linear_svm\n\n    run_mpc_linear_svm(\n        args.epoch, \n        args.lr\n    )\n\n\ndef main(run_experiment):\n    args = parser.parse_args()\n    if args.multiprocess:\n        launcher = MultiProcessLauncher(args.world_size, run_experiment, args)\n        launcher.start()\n        launcher.join()\n        launcher.terminate()\n    else:\n        run_experiment(args)\n\n\nif __name__ == \"__main__\":\n    main(_run_experiment)\n"
+        }
+    ]
+}
